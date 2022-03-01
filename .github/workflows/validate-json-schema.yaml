@@ -1,0 +1,24 @@
+name: Validate With JSON Schema
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - nodes/**
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+          check-latest: true
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli
+      - name: Run ajv
+        run: ajv validate --spec=draft2020 -s schema/node.json -d "nodes/*.yaml"
