@@ -1,0 +1,7 @@
+name: root
+children:
+  - name: child1
+  - name: child2
+    children:
+      - name: child2-1
+  - name: child3
