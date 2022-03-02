@@ -5,4 +5,4 @@ children:
     children:
       - name: child2-1
   - name: child3
-    error: true
+  - name: child4
