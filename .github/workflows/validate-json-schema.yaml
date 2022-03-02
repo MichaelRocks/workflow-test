@@ -5,7 +5,7 @@ on:
       - main
     paths:
       - nodes/**.yaml
-  pull:
+  pull_request:
     paths:
       - nodes/**.yaml
 
