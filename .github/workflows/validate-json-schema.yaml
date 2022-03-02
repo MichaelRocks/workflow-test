@@ -4,7 +4,10 @@ on:
     branches:
       - main
     paths:
-      - nodes/**
+      - nodes/**.yaml
+  pull:
+    paths:
+      - nodes/**.yaml
 
 jobs:
   validate:
