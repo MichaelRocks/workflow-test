@@ -24,4 +24,4 @@ jobs:
       - name: Install ajv-cli
         run: npm install -g ajv-cli
       - name: Run ajv
-        run: ajv validate --spec=draft2020 -s schema/node.json -d "nodes/*.yaml"
+        run: ajv validate --spec=draft2020 -s schema/node.json -d "nodes/**/*.yaml"
