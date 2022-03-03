@@ -1,0 +1,27 @@
+name: Run yamllint
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - ./**.yaml
+  pull_request:
+    paths:
+      - ./**.yaml
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - name: Install yamllint
+        run: pip install yamllint
+      - name: Run yamllint
+        run: yamllint .
