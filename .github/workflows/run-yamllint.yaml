@@ -1,17 +1,9 @@
 name: Run yamllint
-on:
-  push:
-    branches:
-      - master
-    paths:
-      - ./**.yaml
-  pull_request:
-    paths:
-      - ./**.yaml
+on: [push, pull_request]
 
 jobs:
-  validate:
-    name: Validate
+  yamllint:
+    name: Run yamllint
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
