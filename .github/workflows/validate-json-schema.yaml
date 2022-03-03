@@ -1,4 +1,4 @@
-name: Validate With JSON Schema
+name: Validate Analytical Schemas With JSON Schema
 on:
   push:
     branches:
